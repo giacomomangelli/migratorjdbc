@@ -14,7 +14,7 @@ public class OldSchemaObjDaoImpl extends AbstractMySQLDAO {
 	private Connection connection;
 
 	public List<OldSchemaObj> list() throws Exception {
-		if (isNotActive()) {
+		if (!isNotActive()) {
 			throw new Exception("Connessione chiusa. Impossibile operare con il Dao.");
 		}
 
@@ -33,9 +33,10 @@ public class OldSchemaObjDaoImpl extends AbstractMySQLDAO {
 				oldSchemaObj.setId(result.getLong("ID"));
 				oldSchemaObj.setNome(result.getString("NOME"));
 				oldSchemaObj.setCognome(result.getString("COGNOME"));
+				oldSchemaObj.setCodiceFiscale(result.getString("CODICE_FISCALE"));
 				oldSchemaObj.setDataNascita(result.getDate("DATA_NASCITA"));
 				oldSchemaObj.setNumeroSinistri(result.getInt("SINISTRI_TOT"));
-				
+
 				oldSchemaObjs.add(oldSchemaObj);
 			}
 			return oldSchemaObjs;

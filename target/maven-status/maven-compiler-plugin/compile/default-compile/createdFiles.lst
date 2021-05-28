@@ -1,0 +1,12 @@
+it\prova\datamigration\dao\oldschemaobj\OldSchemaObjDaoImpl.class
+it\prova\datamigration\service\DataMigrationService.class
+it\prova\datamigration\dao\AbstractMySQLDAO.class
+it\prova\datamigration\dao\notprocessed\NotProcessedDaoImpl.class
+it\prova\datamigration\dao\Constants.class
+it\prova\datamigration\model\OldSchemaObj.class
+it\prova\datamigration\service\MyServiceFactory.class
+it\prova\datamigration\connection\MyConnection.class
+it\prova\datamigration\dao\assicurato\AssicuratoDaoImpl.class
+it\prova\datamigration\model\Assicurato.class
+it\prova\datamigration\test\MigrationTest.class
+it\prova\datamigration\model\NotProcessed.class

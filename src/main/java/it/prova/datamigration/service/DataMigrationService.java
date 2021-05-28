@@ -19,15 +19,14 @@ public class DataMigrationService {
 
 	private AssicuratoDaoImpl assicuratoDaoInstance;
 	private NotProcessedDaoImpl notProcessedDaoInstance;
-	private OldSchemaObjDaoImpl oldSchemaDaoObjInstance;
+	public OldSchemaObjDaoImpl oldSchemaDaoObjInstance;
 
 	public void inserimentoAssicurati() throws Exception {
 
 		List<OldSchemaObj> oldInstanceList = new ArrayList<>();
 
-		try (Connection connection = MyConnection.getConnection(Constants.DRIVER_NAME, Constants.CONNECTION_URL_OLD)) {
-
-			oldSchemaDaoObjInstance.setConnection(connection);
+		try (Connection connectionOld = MyConnection.getConnection(Constants.DRIVER_NAME, Constants.CONNECTION_URL_OLD)) {
+			oldSchemaDaoObjInstance.setConnection(connectionOld);
 			oldInstanceList = oldSchemaDaoObjInstance.list();
 
 		} catch (Exception e) {
@@ -59,10 +58,10 @@ public class DataMigrationService {
 			}
 		}
 
-		try (Connection connection = MyConnection.getConnection(Constants.DRIVER_NAME, Constants.CONNECTION_URL_NEW)) {
+		try (Connection connectionNew = MyConnection.getConnection(Constants.DRIVER_NAME, Constants.CONNECTION_URL_NEW)) {
 
-			assicuratoDaoInstance.setConnection(connection);
-			notProcessedDaoInstance.setConnection(connection);
+			assicuratoDaoInstance.setConnection(connectionNew);
+			notProcessedDaoInstance.setConnection(connectionNew);
 			notProcessedDaoInstance.insert(nonProcessati);
 			assicuratoDaoInstance.insert(assicurati);
 

@@ -16,20 +16,20 @@ public class NotProcessedDaoImpl extends AbstractMySQLDAO {
 		if (notProcessedInstanceList == null) {
 			throw new Exception("Inserimento id invalido.");
 		}
-		
-		if(notProcessedInstanceList.isEmpty()) {
+
+		if (notProcessedInstanceList.isEmpty()) {
 			return;
 		}
 
-		if (isNotActive()) {
+		if (!isNotActive()) {
 			throw new Exception("Connessione chiusa. Impossibile operare con il Dao.");
 		}
 
-		String query = "INSERT INTO ASSICURATO " + "(CODICE_FISCALE, OLD_ID)" + " VALUES (?,?)";
+		String query = "INSERT INTO NOT_PROCESSED " + "(CODICE_FISCALE, OLD_ID)" + " VALUES (?,?)";
 
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
-			
-			for(NotProcessed notProcessedItem : notProcessedInstanceList) {
+
+			for (NotProcessed notProcessedItem : notProcessedInstanceList) {
 				statement.setString(1, notProcessedItem.getCodiceFiscale());
 				statement.setString(2, notProcessedItem.getOldId());
 			}

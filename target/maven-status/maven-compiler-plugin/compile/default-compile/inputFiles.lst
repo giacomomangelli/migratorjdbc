@@ -1,0 +1,12 @@
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\connection\MyConnection.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\dao\Constants.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\dao\AbstractMySQLDAO.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\dao\notprocessed\NotProcessedDaoImpl.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\dao\oldschemaobj\OldSchemaObjDaoImpl.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\model\Assicurato.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\model\NotProcessed.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\test\MigrationTest.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\service\DataMigrationService.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\dao\assicurato\AssicuratoDaoImpl.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\model\OldSchemaObj.java
+D:\Giacomo\eclipse-workspace-new\datamigration\src\main\java\it\prova\datamigration\service\MyServiceFactory.java

@@ -6,8 +6,12 @@ import it.prova.datamigration.dao.oldschemaobj.OldSchemaObjDaoImpl;
 
 public class MyServiceFactory {
 	
-	public static DataMigrationService dataMigrationServiceImpl() {
-		DataMigrationService dataMigrationServiceInstance = new DataMigrationService();
+	private static DataMigrationService dataMigrationServiceInstance = null;
+	
+	public static DataMigrationService getMigrationServiceInstance() {
+		if(dataMigrationServiceInstance==null) {
+			dataMigrationServiceInstance = new DataMigrationService();
+		}
 		dataMigrationServiceInstance.setAssicuratoDaoInstance(new AssicuratoDaoImpl());
 		dataMigrationServiceInstance.setNotProcessedDaoInstance(new NotProcessedDaoImpl());
 		dataMigrationServiceInstance.setOldSchemaDaoObjInstance(new OldSchemaObjDaoImpl());

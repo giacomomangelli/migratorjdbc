@@ -13,11 +13,15 @@ public class AssicuratoDaoImpl extends AbstractMySQLDAO {
 
 	public void insert(List<Assicurato> assicuratiInstance) throws Exception {
 
-		if (assicuratiInstance == null || assicuratiInstance.isEmpty()) {
-			throw new Exception("Inserimento id invalido.");
+		if (assicuratiInstance == null) {
+			throw new Exception("Inserimento assicurato invalido.");
+		}
+		
+		if (assicuratiInstance.isEmpty()) {
+			return;
 		}
 
-		if (isNotActive()) {
+		if (!isNotActive()) {
 			throw new Exception("Connessione chiusa. Impossibile operare con il Dao.");
 		}
 
